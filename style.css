@@ -1,4 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Rambla&display=swap');
 body{
     background-color: black;
     color: white;
+    font-family: 'Rambla', sans-serif;
+}
+.parent-container{
+    display: flex;
+}
+.left-box{
+    background-color: brown;
+    border-radius: 10px 0 0 10px;
+    margin-top: .5em;
+    margin-bottom: .5em;
+    margin-right: .5em;
+    padding: 1em;
+}
+.message-box-container{
+    display: flex;
+}
+.message-box{
+    background-color: brown;
+    width: 12em;
+    padding: 1em;
+    margin: .5em;
+}
+.health-boxes{
+    display: flex;
+}
+.health{
+    background-color: brown;
+    margin: .5em;
+    padding: 1em;
+    width: 2em;
+}
+.rounded-box{
+    background-color: brown;
+    border-radius: 0 20px 20px 0;
+    margin-top: .5em;
+    margin-bottom: .5em;
+    margin-left: .5em;
+    padding: 1em;
 }
