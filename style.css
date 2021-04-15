@@ -56,7 +56,22 @@ body{
     margin-bottom: .5em;
     margin-right: .5em;
     padding: 1em;
-    border-block-end: white;
+    /* border-block-end: white; */
+}
+.science .left-box{
+    background-color: rgba(99, 117, 153, 1);
+}
+.medical.left-box{
+    background-color: rgba(255, 204, 0, 1);
+}
+.engineering.left-box{
+    background-color: rgba(255, 204, 0, 1);
+}
+.psych.left-box{
+    background-color: rgba(255, 204, 0, 1);
+}
+.security.left-box{
+    background-color: rgba(255, 204, 0, 1);
 }
 .message-box-container{
     display: flex;
@@ -75,15 +90,12 @@ body{
     margin: .5em;
     padding: 1em;
     width: 2em;
+    display: flex;
 }
 .top-screen .health:hover{
     background-color: rgba(255, 204, 0, .5);
 }
-.health-one{
-    background-color: rgba(255, 204, 0, 1);
-    display: flex;
-}
-.health-one img{
+.health img{
     width: 1em;
 }
 .rounded-box{
@@ -99,18 +111,4 @@ body{
     padding: 0;
     flex-wrap: wrap;
 }
-.bottom-screen .health{
-    background-color: rgba(168, 50, 50, 1);
-}
-.bottom-screen .health:hover{
-    background-color: rgba(168, 50, 50, .5);
-}
-.bottom-screen .rounded-box{
-    background-color: rgba(168, 50, 50, 1);
-}
-.bottom-screen .left-box{
-    background-color: rgba(168, 50, 50, 1);
-}
-.bottom-screen .message-box{
-    background-color: rgba(168, 50, 50, 1);
-}
+
