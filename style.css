@@ -1,25 +1,68 @@
-@import url('https://fonts.googleapis.com/css2?family=Rambla&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 body{
-    background-color: black;
+    background-image: url(./img/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
     color: white;
-    font-family: 'Rambla', sans-serif;
+    font-family: 'Anton', sans-serif;
+    display: flex;
+}
+.full-screen{
+    background-color: rgba(0, 0, 0, 0.25);
+    border: none;
+    height: 100%;
+    width: 100vw;
+    position: relative;
+    z-index : 1;
+    border-radius: 10px;
+}
+.full-screen::before{
+    content : "";
+  position: absolute;
+  right    : 0;
+  top  : 0;
+  height  : 1px;
+  width   : 74%;  /* or 100px */
+  border-top: 4em solid orange;
+  border-radius:  0 10px 0 0px;
+}
+.full-screen::after{
+    content : "";
+  position: absolute;
+  left   : 0;
+  top  : 0;
+  height  : 1px;
+  width   : 9%;  /* or 100px */
+  border-top: 4em solid orange;
+  border-radius:  10px 0 0 0px;
+}
+.full-screen h1{
+    padding-left: 3.5em;
+    font-size: 2.5rem;
+    color: orange;
+}
+.top-screen{
+    display: flex;
+    flex-wrap: wrap;
 }
 .parent-container{
     display: flex;
+    padding: 3em;
 }
 .left-box{
-    background-color: brown;
+    background-color: rgba(255, 204, 0, 1);
     border-radius: 10px 0 0 10px;
     margin-top: .5em;
     margin-bottom: .5em;
     margin-right: .5em;
     padding: 1em;
+    border-block-end: white;
 }
 .message-box-container{
     display: flex;
 }
 .message-box{
-    background-color: brown;
+    background-color: rgba(255, 204, 0, 1);
     width: 12em;
     padding: 1em;
     margin: .5em;
@@ -28,16 +71,46 @@ body{
     display: flex;
 }
 .health{
-    background-color: brown;
+    background-color: rgba(255, 204, 0, 1);
     margin: .5em;
     padding: 1em;
     width: 2em;
 }
+.top-screen .health:hover{
+    background-color: rgba(255, 204, 0, .5);
+}
+.health-one{
+    background-color: rgba(255, 204, 0, 1);
+    display: flex;
+}
+.health-one img{
+    width: 1em;
+}
 .rounded-box{
-    background-color: brown;
+    background-color: rgba(255, 204, 0, 1);
     border-radius: 0 20px 20px 0;
     margin-top: .5em;
     margin-bottom: .5em;
     margin-left: .5em;
     padding: 1em;
+}
+.bottom-screen{
+    display: flex;
+    padding: 0;
+    flex-wrap: wrap;
+}
+.bottom-screen .health{
+    background-color: rgba(168, 50, 50, 1);
+}
+.bottom-screen .health:hover{
+    background-color: rgba(168, 50, 50, .5);
+}
+.bottom-screen .rounded-box{
+    background-color: rgba(168, 50, 50, 1);
+}
+.bottom-screen .left-box{
+    background-color: rgba(168, 50, 50, 1);
+}
+.bottom-screen .message-box{
+    background-color: rgba(168, 50, 50, 1);
 }
