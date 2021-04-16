@@ -68,7 +68,15 @@
     <script>
         UA.then(sdk => {
             sdk.plugins.load('html-prompt', 'https://aswpsdkus.com/notify/v1/ua-html-prompt.min.js', {
-                appearDelay: 5000, disappearDelay: 17000
+                appearDelay: 5000, disappearDelay: 17000,
+                i18n:{
+                    en: {
+                    title: 'Opt in to threat Notifications',
+                    message: 'Subscribe to federation threat notifications by clicking [Allow] in the prompt.',
+                    bubble: 'Unlock permission to allow notifications',
+                    button: 'Allow'
+                }
+            }
             })
                 .then(plugin => plugin.prompt())
         })
