@@ -76,7 +76,7 @@
                                 const notifyMe = () => {
                                     UA.then(sdk => {
                                         sdk.register()
-                                        .then(console.log('you are registered'))
+                                            .then(console.log('you are registered'))
                                     })
                                 }
                             </script>
@@ -88,12 +88,14 @@
     </div>
     <script>
         UA.then(sdk => {
-            sdk.plugins.load('html-prompt', 'https://aswpsdkus.com/notify/v1/ua-html-prompt.min.js', { disappearDelay: 1500, position: 'top-right', i18n:{
-                en: {
-                    title: 'get latest updates on Federation threats',
-                    message: 'subscribe'
+            sdk.plugins.load('html-prompt', 'https://aswpsdkus.com/notify/v1/ua-html-prompt.min.js', {
+                appearDelay: 2000, disappearDelay: 17000, position: 'top-right', i18n: {
+                    en: {
+                        title: 'get latest updates on Federation threats',
+                        message: 'subscribe'
+                    }
                 }
-            }})
+            })
                 .then(plugin => plugin.prompt())
         })
     </script>
