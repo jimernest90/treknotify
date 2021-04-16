@@ -73,7 +73,7 @@
                             <div class='health health-three' onclick="notifyMe()">click for threat notification</div>
                             <div class='rounded-box'></div>
                             <script>
-                                const notifyMe = () => {
+                                function notifyMe (){
                                     UA.then(sdk => {
                                         sdk.register()
                                             .then(console.log('you are registered'))
