@@ -1,4 +1,4 @@
-// 86acbd31cd7c09cf30acb66d2fbedc91daa48b86:1618585043.8106408
+// 86acbd31cd7c09cf30acb66d2fbedc91daa48b86:1618615156.002828
 importScripts('https://aswpsdkus.com/notify/v1/ua-sdk.min.js')
 uaSetup.worker(self, {
   defaultIcon: 'https://i.imgur.com/jzWZhzc.png',
