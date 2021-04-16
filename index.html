@@ -69,40 +69,20 @@
                         <div class='health-boxes'>
                             <div class='health'><img src='./img/wrench.svg' alt='wrench' /><img src='./img/heart.svg'
                                     alt='heart' /></div>
-                            <div class='health health-two'></div>
+                            <div class='health health-two'>Register for notifications</div>
                             <div class='health health-three' onclick="notifyMe()">click for threat notification</div>
                             <div class='rounded-box'></div>
                             <script>
                                 const notifyMe = () => {
-                                    UA.then(sdk => {
-                                        sdk.plugins
-                                            .load('registration-page', 'https://aswpsdkus.com/notify/v1/ua-registration-page.min.js', {
-                                                i18n: {
-                                                    fr: {
-                                                        title: 'Autoriser les notifications Web',
-                                                        message: 'Souscrivez aux notifications',
-                                                        bubble: 'Changez la permission pour permettre les notifications',
-                                                        button: 'Autoriser'
-                                                    },
-                                                    en: {
-                                                        title: 'Opt in to Web Notifications',
-                                                        message: 'Subscribe to web notifications by clicking [Allow] in the prompt.',
-                                                        bubble: 'Unlock permission to allow notifications',
-                                                        button: 'Allow'
-                                                    }
-                                                    // you can also use locales to set more specific messages
-                                                    // 'en-US': [...],
-                                                    // 'fr-CA':  [...]
-                                                }
-                                            })
-                                            .then(plugin => plugin.open())
-                                    });
+
                                 }
                             </script>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
 </body>
 <script src="script.js"></script>
 
