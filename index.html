@@ -7,116 +7,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Trek Notify</title>
+
+    <script type="text/javascript">
+        // 86acbd31cd7c09cf30acb66d2fbedc91daa48b86:1618530692.3807685
+        !function (n, r, e, t, c) {
+            var i, o = "Promise" in n, u = {
+                then: function () { return u }, catch: function (n) {
+                    return n(new Error("Airship SDK Error: Unsupported browser")), u
+                }
+            }, s = o ? new Promise((function (n, r) { i = function (e, t) { e ? r(e) : n(t) } })) : u
+            ; s._async_setup = function (n) { if (o) try { i(null, n(c)) } catch (n) { i(n) } }, n[t] = s; var a = r.createElement("script"); a.src = e, a.async = !0, a.id = "_uasdk",
+                a.rel = t, r.head.appendChild(a)
+        }(window, document, 'https://aswpsdkus.com/notify/v1/ua-sdk.min.js',
+            'UA', {
+
+            // Only needed when used on insecure hosts:
+            // secureIframeUrl: 'https://your.secure.domain/path/to/web-push-secure-bridge.html',
+
+            vapidPublicKey: 'BIrIv6yIqEolM5XKDhOFVXqdcw4BGmENuGXJ5LGTVc8k8sPmivYg7l_r5HTejLpRDiuYBp0dzk7uwLL7Kaw4wJk=',
+            appKey: 'zNNG1hT7SsyA9Og15sA8kA',
+            token: 'MTp6Tk5HMWhUN1NzeUE5T2cxNXNBOGtBOlVCUzROMFZiaFVPOGdlODJtNHVGZHI2TEFNc3Y1X05hVTNJT3FUWVdrMHc'
+        });
+
+    </script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function () {
+                navigator.serviceWorker.register('./push-worker.js').then(function (registration) {
+                    // Registration was successful
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                }, function (err) {
+                    // registration failed :(
+                    console.log('ServiceWorker registration failed: ', err);
+                });
+            });
+        }
+    </script>
 </head>
 
 <body>
     <div class='full-screen'>
+        <header>
+            <img src='./img/saturn.png' alt='logo' />
+            <h1>TREK NOTIFIER</h1>
+        </header>
         <div class='transparent'>
-        <div class='top-screen'>
-            <div class='parent-container science'>
-                <div class='left-box'></div>
-                <div class='outer-box'>
-                    <div class='message-box-container'>
-                        <div class='message-box'>Sciences</div>
-                        <div class='rounded-box'></div>
-                    </div>
-                    <div class='health-boxes'>
-                        <div class='health science'><img src='./img/wrench.svg' alt='wrench' /><img
-                                src='./img/heart.svg' alt='heart' /></div>
-                        <div class='health'><img src='./img/microscope.png' alt='microscope' /></div>
-                        <div class='health'></div>
-                        <div class='rounded-box'></div>
+            <div id='about'>
+                <p>Let's face it. We are under attack all the time. Romulans, Cardassians, etc.</p>
+                <p>With this state of the art notifier, we will be ahead of any unforseen threat.</p>
+                <p>Wouldn't you like to be notified before a Q comes in and zaps you into some sort arthurian nightmare?
+                </p>
+            </div>
+            <div class='top-screen'>
+                <div class='parent-container'>
+                    <div class='left-box'></div>
+                    <div class='outer-box'>
+                        <div class='message-box-container'>
+                            <div class='message-box'>Notifier</div>
+                            <div class='rounded-box'></div>
+                        </div>
+                        <div class='health-boxes'>
+                            <div class='health'><img src='./img/wrench.svg' alt='wrench' /><img src='./img/heart.svg'
+                                    alt='heart' /></div>
+                            <div class='health health-two'></div>
+                            <div class='health health-three' onclick="notifyme()">click for threat notification</div>
+                            <div class='rounded-box'></div>
+                            <script>
+                                UA.
+                            </script>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class='parent-container engineering'>
-                <div class='left-box'></div>
-                <div class='outer-box'>
-                    <div class='message-box-container'>
-                        <div class='message-box'>Engineering</div>
-                        <div class='rounded-box'></div>
-                    </div>
-                    <div class='health-boxes'>
-                        <div class='health'><img src='./img/wrench.svg' alt='wrench' /><img src='./img/heart.svg'
-                                alt='heart' /></div>
-                        <div class='health engineering'><img src='./img/crystals.png' alt='crystals' /></div>
-                        <div class='health'></div>
-                        <div class='rounded-box'></div>
-                    </div>
-                </div>
-            </div>
-            <div class='parent-container medical'>
-                <div class='left-box'></div>
-                <div class='outer-box'>
-                    <div class='message-box-container'>
-                        <div class='message-box'>Medical</div>
-                        <div class='rounded-box'></div>
-                    </div>
-                    <div class='health-boxes'>
-                        <div class='health'><img src='./img/wrench.svg' alt='wrench' /><img src='./img/heart.svg'
-                                alt='heart' /></div>
-                        <div class='health medical'><img src='./img/needle.png' alt='needle' /></div>
-                        <div class='health'></div>
-                        <div class='rounded-box'></div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <div class='bottom-screen'>
-            <div class='parent-container command'>
-                <div class='left-box'></div>
-                <div class='outer-box'>
-                    <div class='message-box-container'>
-                        <div class='message-box'>Command</div>
-                        <div class='rounded-box'></div>
-                    </div>
-                    <div class='health-boxes'>
-                        <div class='health'><img src='./img/wrench.svg' alt='wrench' /><img src='./img/heart.svg'
-                                alt='heart' /></div>
-                        <div class='health command'><img src='./img/flute.png' alt='flute' /></div>
-                        <div class='health'></div>
-                        <div class='rounded-box'></div>
-                    </div>
-                </div>
-            </div>
-            <div class='parent-container psych'>
-                <div class='left-box'></div>
-                <div class='outer-box'>
-                    <div class='message-box-container'>
-                        <div class='message-box'>Psychology</div>
-                        <div class='rounded-box'></div>
-                    </div>
-                    <div class='health-boxes'>
-                        <div class='health'><img src='./img/wrench.svg' alt='wrench' /><img src='./img/heart.svg'
-                                alt='heart' /></div>
-                        <div class='health psych'></div>
-                        <div class='health'></div>
-                        <div class='rounded-box'></div>
-                    </div>
-                </div>
-            </div>
-            <div class='parent-container security'>
-                <div class='left-box'></div>
-                <div class='outer-box'>
-                    <div class='message-box-container'>
-                        <div class='message-box'>Security</div>
-                        <div class='rounded-box'></div>
-                    </div>
-                    <div class='health-boxes'>
-                        <div class='health'><img src='./img/wrench.svg' alt='wrench' /><img src='./img/heart.svg'
-                                alt='heart' /></div>
-                        <div class='health security'><img src='./img/phaser.png' alt='phaser' /></div>
-                        <div class='health'></div>
-                        <div class='rounded-box'></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-        <div class ='computer-messages'></div>
-    </div>
-    </div>
 </body>
 <script src="script.js"></script>
 
