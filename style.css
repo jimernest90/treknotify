@@ -262,5 +262,8 @@ header{
        /* background-color: rgba(255, 204, 0, 1); */
        width: 100vw;
    }
-   
+   .nav img{
+       width: 2em;
+       height: 2em;
+   }
 }
