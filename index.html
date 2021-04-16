@@ -3,30 +3,25 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" href="https://i.imgur.com/ZXEvmUb.png" />
+    <link rel="icon" href="https://i.imgur.com/jzWZhzc.png" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Trek Notify</title>
 
     <script type="text/javascript">
-        // 86acbd31cd7c09cf30acb66d2fbedc91daa48b86:1618530692.3807685
-        !function (n, r, e, t, c) {
-            var i, o = "Promise" in n, u = {
-                then: function () { return u }, catch: function (n) {
-                    return n(new Error("Airship SDK Error: Unsupported browser")), u
-                }
-            }, s = o ? new Promise((function (n, r) { i = function (e, t) { e ? r(e) : n(t) } })) : u
-                ; s._async_setup = function (n) { if (o) try { i(null, n(c)) } catch (n) { i(n) } }, n[t] = s; var a = r.createElement("script"); a.src = e, a.async = !0, a.id = "_uasdk",
-                    a.rel = t, r.head.appendChild(a)
-        }(window, document, 'https://aswpsdkus.com/notify/v1/ua-sdk.min.js',
-            'UA', {
+        // 86acbd31cd7c09cf30acb66d2fbedc91daa48b86:1618585043.8106408
+        !function(n,r,e,t,c){var i,o="Promise"in n,u={then:function(){return u},catch:function(n){
+        return n(new Error("Airship SDK Error: Unsupported browser")),u}},s=o?new Promise((function(n,r){i=function(e,t){e?r(e):n(t)}})):u
+        ;s._async_setup=function(n){if(o)try{i(null,n(c))}catch(n){i(n)}},n[t]=s;var a=r.createElement("script");a.src=e,a.async=!0,a.id="_uasdk",
+        a.rel=t,r.head.appendChild(a)}(window,document,'https://aswpsdkus.com/notify/v1/ua-sdk.min.js',
+          'UA', {
             vapidPublicKey: 'BIrIv6yIqEolM5XKDhOFVXqdcw4BGmENuGXJ5LGTVc8k8sPmivYg7l_r5HTejLpRDiuYBp0dzk7uwLL7Kaw4wJk=',
             appKey: 'zNNG1hT7SsyA9Og15sA8kA',
             token: 'MTp6Tk5HMWhUN1NzeUE5T2cxNXNBOGtBOlVCUzROMFZiaFVPOGdlODJtNHVGZHI2TEFNc3Y1X05hVTNJT3FUWVdrMHc'
-        });
-
-    </script>
+          });
+        
+        </script>
 </head>
 
 <body>
@@ -75,7 +70,7 @@
             sdk.plugins.load('html-prompt', 'https://aswpsdkus.com/notify/v1/ua-html-prompt.min.js', {
                 appearDelay: 5000, disappearDelay: 17000
             })
-                .then(plugin => plugin.prompt())
+                .then(plugin => plugin.open())
         })
     </script>
 </body>
