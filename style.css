@@ -1,23 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@100&display=swap');
 body{
-    background-image: url(./img/background.jpg);
+    background-color: rgba(0, 0, 0, 0.75);
     background-size: cover;
     background-repeat: no-repeat;
-    font-family: 'Anton', sans-serif;
+    font-family: 'Antonio', sans-serif;
 }
 .nav{
     width: 100vw;
     display: flex;
-    text-shadow: 2px 2px 4px #fcfbfb;
 }
 .transparent{
-    background-color: rgba(0, 0, 0, 0.75);
+    
     border-radius: 10px;
     padding: 2em;
 }
 .full-screen{
-    background-color: rgba(0, 0, 0, 0.25);
-    background: url(./img/diagram.png);
+    /* background-color: rgba(0, 0, 0, 0.25); */
+    background-color: snow;
     background-size: contain;
     background-repeat: no-repeat;
     height: 100%;
@@ -25,14 +24,9 @@ body{
     position: relative;
 }
 .top-screen{
-    padding-left: 2em;
+    margin-left: 17.25em;
     display: flex;
     flex-wrap: wrap;
-}
-.parent-container{
-    display: flex;
-    padding: 3em;
-    margin: auto;
 }
 .left-box{
     background-color: rgba(255, 204, 0, 1);
@@ -48,14 +42,16 @@ body{
 .message-box{
     background: url('./img/monitor-view-one.jpeg');
     width: 27.5em;
-    height: 5em;
+    height: 20em;
     padding: 1em;
     margin: .5em;
     border: solid white 2px;
     background-repeat: no-repeat;
+    display: flex;
 }
 .health-boxes{
     display: flex;
+    
 }
 .health-one{
     animation-name: levels;
@@ -75,7 +71,7 @@ body{
     cursor: pointer;
 }
 .health{
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(0, 0, 0, 0.25);
     margin: .5em;
     padding: 1em;
     width: 4.7em;
@@ -150,4 +146,62 @@ header{
     25%{
         width: 60%;
     }
+}
+
+@media(max-width:420px){
+    body{
+        background-image: unset;
+    }
+    .full-screen{
+        margin: auto;
+        background-color: none;
+    }
+   .health-boxes{
+       flex-wrap: wrap;
+       width: 15em;
+       margin: auto;
+       border-bottom: none;
+   }
+   .health{
+       width: 4em;
+       height: 4em;
+       
+       
+   }
+   .header-one{
+       width: 10%;
+   }
+   .message-box-container{
+       padding: 0;
+       display: flex;
+   }
+   .message-box{
+       width: 15em;
+       height: 15em;
+       margin: auto;
+       border-top: 'none';
+       border-bottom: none;
+   }
+   .top-screen{
+       margin: auto;
+       display: flex;
+       flex-direction: column;
+   }
+   .left-box{
+       display: none;
+   }
+   .rounded-box{
+       display: none;
+   }
+   #about{
+       width: 15em;
+       font-size: inherit;
+       margin: auto;
+       margin-bottom: 1em;
+   }
+   .nav{
+       /* background-color: rgba(255, 204, 0, 1); */
+       width: 100vw;
+   }
+   
 }

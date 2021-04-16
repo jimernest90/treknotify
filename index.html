@@ -34,7 +34,8 @@
         <header>
             <div class='nav'>
                 <img src='./img/saturn.png' alt='logo' />
-                <h1>TREK NOTIFIER</h1><div class='header-one'></div>
+                <h1>TREK NOTIFIER</h1>
+                <div class='header-one'></div>
             </div>
         </header>
         <div class='transparent'>
@@ -45,37 +46,36 @@
                 </p>
             </div>
             <div class='top-screen'>
-                <div class='parent-container'>
-                    <div class='left-box'></div>
-                    <div class='outer-box'>
-                        <div class='message-box-container'>
-                            <div class='message-box'></div>
-                            <div class='rounded-box'></div>
-                        </div>
-                        <div class='health-boxes'>
-                            <div class='health health-one'><img src='./img/wrench.svg' alt='wrench' /><img
-                                    src='./img/heart.svg' alt='heart' /></div>
-                            <div class='health health-two'>click for space view</div>
-                            <div class='health health-three'>click for ship diagram</div>
-                            <div class='health health-four' onclick="notifyMe()">click for threat notification</div>
-                            <div class='rounded-box'></div>
-                            <script>
-                                function notifyMe() {
-                                    UA.then(sdk => {
-                                        sdk.register()
-                                            .then(console.log('you are registered'))
-                                    })
-                                }
-                            </script>
-                        </div>
-                    </div>
+
+                <div class='left-box'></div>
+                <div class='message-box-container'>
+                    <div class='message-box'></div>
+                    <div class='rounded-box'></div>
+                </div>
+                <div class='health-boxes'>
+                    <div class='health health-one'><img src='./img/wrench.svg' alt='wrench' /><img src='./img/heart.svg'
+                            alt='heart' /></div>
+                    <div class='health health-two'>click for space view</div>
+                    <div class='health health-three'>click for ship diagram</div>
+                    <div class='health health-four' onclick="notifyMe()">click for threat notification</div>
+                    <div class='rounded-box'></div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class='footer'>
-        <div class='footer-one'></div>
-        <div class='footer-two'></div>
+        <div class='footer'>
+            <div class='footer-one'></div>
+            <div class='footer-two'></div>
+        </div>
+        <script>
+            function notifyMe() {
+                UA.then(sdk => {
+                    sdk.register()
+                        .then(console.log('you are registered'))
+                })
+            }
+        </script>
+
+
     </div>
     <script>
         UA.then(sdk => {
