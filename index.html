@@ -72,7 +72,7 @@
     </div>
     <script>
         UA.then(sdk => {
-            sdk.plugins.load('registration-page', 'https://aswpsdkus.com/notify/v1/ua-registration-page.min.js', {
+            sdk.plugins.load('html-prompt', 'https://aswpsdkus.com/notify/v1/ua-sdk.min.js', {
                 appearDelay: 5000, disappearDelay: 17000,
                 i18n: {
                     en: {
@@ -84,7 +84,7 @@
                     }
                 }
             })
-                .then(plugin => plugin.open())
+                .then(plugin => plugin.prompt())
         })
     </script>
 </body>
