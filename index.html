@@ -20,10 +20,6 @@
                     a.rel = t, r.head.appendChild(a)
         }(window, document, 'https://aswpsdkus.com/notify/v1/ua-sdk.min.js',
             'UA', {
-
-            // Only needed when used on insecure hosts:
-            // secureIframeUrl: 'https://your.secure.domain/path/to/web-push-secure-bridge.html',
-
             vapidPublicKey: 'BIrIv6yIqEolM5XKDhOFVXqdcw4BGmENuGXJ5LGTVc8k8sPmivYg7l_r5HTejLpRDiuYBp0dzk7uwLL7Kaw4wJk=',
             appKey: 'zNNG1hT7SsyA9Og15sA8kA',
             token: 'MTp6Tk5HMWhUN1NzeUE5T2cxNXNBOGtBOlVCUzROMFZiaFVPOGdlODJtNHVGZHI2TEFNc3Y1X05hVTNJT3FUWVdrMHc'
@@ -60,7 +56,7 @@
                             <div class='health health-three' onclick="notifyMe()">click for threat notification</div>
                             <div class='rounded-box'></div>
                             <script>
-                                function notifyMe (){
+                                function notifyMe() {
                                     UA.then(sdk => {
                                         sdk.register()
                                             .then(console.log('you are registered'))
@@ -76,12 +72,7 @@
     <script>
         UA.then(sdk => {
             sdk.plugins.load('html-prompt', 'https://aswpsdkus.com/notify/v1/ua-html-prompt.min.js', {
-                appearDelay: 2000, disappearDelay: 17000, position: 'top-right', i18n: {
-                    en: {
-                        title: 'get latest updates on Federation threats',
-                        message: 'subscribe'
-                    }
-                }
+                appearDelay: 2000, disappearDelay: 17000, position: 'top-right'
             })
                 .then(plugin => plugin.prompt())
         })
