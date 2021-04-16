@@ -67,8 +67,8 @@
     </div>
     <script>
         UA.then(sdk => {
-            sdk.plugins.load('html-prompt', 'https://aswpsdkus.com/notify/v1/ua-html-prompt.min.js', {
-                appearDelay: 1000, disappearDelay: 17000, position: 'top-right', i18n:{
+            sdk.plugins.load('registration-page', 'https://aswpsdkus.com/notify/v1/ua-html-prompt.min.js', {
+                appearDelay: 5000, disappearDelay: 17000, position: 'top-right', i18n:{
                     en: {
                     title: 'choose to be notified of federation threats',
                     message: 'Subscribe to federation notifications by clicking [Allow] in the prompt.',
@@ -77,7 +77,7 @@
                 }
                 }
             })
-                .then(plugin => plugin.prompt())
+                .then(plugin => plugin.open())
         })
     </script>
 </body>
