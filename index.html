@@ -17,8 +17,8 @@
                     return n(new Error("Airship SDK Error: Unsupported browser")), u
                 }
             }, s = o ? new Promise((function (n, r) { i = function (e, t) { e ? r(e) : n(t) } })) : u
-            ; s._async_setup = function (n) { if (o) try { i(null, n(c)) } catch (n) { i(n) } }, n[t] = s; var a = r.createElement("script"); a.src = e, a.async = !0, a.id = "_uasdk",
-                a.rel = t, r.head.appendChild(a)
+                ; s._async_setup = function (n) { if (o) try { i(null, n(c)) } catch (n) { i(n) } }, n[t] = s; var a = r.createElement("script"); a.src = e, a.async = !0, a.id = "_uasdk",
+                    a.rel = t, r.head.appendChild(a)
         }(window, document, 'https://aswpsdkus.com/notify/v1/ua-sdk.min.js',
             'UA', {
             vapidPublicKey: 'BIrIv6yIqEolM5XKDhOFVXqdcw4BGmENuGXJ5LGTVc8k8sPmivYg7l_r5HTejLpRDiuYBp0dzk7uwLL7Kaw4wJk=',
@@ -32,14 +32,16 @@
 <body>
     <div class='full-screen'>
         <header>
-            <img src='./img/saturn.png' alt='logo' />
-            <h1>TREK NOTIFIER</h1>
+            <div class='nav'>
+                <img src='./img/saturn.png' alt='logo' />
+                <h1>TREK NOTIFIER</h1><div class='header-one'></div>
+            </div>
         </header>
         <div class='transparent'>
             <div id='about'>
-                <p>Let's face it. We are under attack all the time. Romulans, Cardassians, etc.</p>
-                <p>With this state of the art notifier, we will be ahead of any unforseen threat.</p>
-                <p>Wouldn't you like to be notified before a Q comes in and zaps you into some sort arthurian nightmare?
+                <p>Let's face it. We are under attack all the time. Romulans, Cardassians, etc. With this state of the
+                    art notifier, we will be ahead of any unforseen threat. Wouldn't you like to be notified before a Q
+                    comes in and zaps you into some sort arthurian nightmare?
                 </p>
             </div>
             <div class='top-screen'>
@@ -47,14 +49,15 @@
                     <div class='left-box'></div>
                     <div class='outer-box'>
                         <div class='message-box-container'>
-                            <div class='message-box'>Notifier</div>
+                            <div class='message-box'></div>
                             <div class='rounded-box'></div>
                         </div>
                         <div class='health-boxes'>
-                            <div class='health'><img src='./img/wrench.svg' alt='wrench' /><img src='./img/heart.svg'
-                                    alt='heart' /></div>
-                            <div class='health health-two'></div>
-                            <div class='health health-three' onclick="notifyMe()">click for threat notification</div>
+                            <div class='health health-one'><img src='./img/wrench.svg' alt='wrench' /><img
+                                    src='./img/heart.svg' alt='heart' /></div>
+                            <div class='health health-two'>click for space view</div>
+                            <div class='health health-three'>click for ship diagram</div>
+                            <div class='health health-four' onclick="notifyMe()">click for threat notification</div>
                             <div class='rounded-box'></div>
                             <script>
                                 function notifyMe() {
@@ -70,6 +73,10 @@
             </div>
         </div>
     </div>
+    <div class='footer'>
+        <div class='footer-one'></div>
+        <div class='footer-two'></div>
+    </div>
     <script>
         UA.then(sdk => {
             sdk.plugins.load('html-prompt', 'https://aswpsdkus.com/notify/v1/ua-html-prompt.min.js', {
@@ -84,7 +91,7 @@
                     }
                 }
             })
-            .then(plugin => plugin.prompt())
+                .then(plugin => plugin.prompt())
         })
     </script>
 </body>

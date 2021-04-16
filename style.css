@@ -5,9 +5,15 @@ body{
     background-repeat: no-repeat;
     font-family: 'Anton', sans-serif;
 }
+.nav{
+    width: 100vw;
+    display: flex;
+    text-shadow: 2px 2px 4px #fcfbfb;
+}
 .transparent{
-    background-color: rgba(0, 0, 0, 0.25);
+    background-color: rgba(0, 0, 0, 0.75);
     border-radius: 10px;
+    padding: 2em;
 }
 .full-screen{
     background-color: rgba(0, 0, 0, 0.25);
@@ -15,24 +21,9 @@ body{
     background-size: contain;
     background-repeat: no-repeat;
     height: 100%;
-    width: 100vw;
+    width: 100%;
     position: relative;
 }
-.full-screen::after{
-    content: "";
-    background: rgba(255, 204, 0, 1);
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 70%;
-    height: 2em;
-    border-radius: 0 10px 0 0;
-}
-.full-screen p{
-    text-align:left;
-    color: white;
-}
-
 .top-screen{
     padding-left: 2em;
     display: flex;
@@ -50,28 +41,47 @@ body{
     margin-bottom: .5em;
     margin-right: .1em;
     padding: 1em;
-    /* border-block-end: white; */
 }
 .message-box-container{
     display: flex;
 }
 .message-box{
-    background-color: rgba(255, 204, 0, 1);
-    width: 20em;
+    background: url('./img/monitor-view-one.jpeg');
+    width: 27.5em;
     height: 5em;
     padding: 1em;
     margin: .5em;
+    border: solid white 2px;
+    background-repeat: no-repeat;
 }
 .health-boxes{
     display: flex;
 }
-.health{
+.health-one{
+    animation-name: levels;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+.health-two:hover{
     background-color: rgba(255, 204, 0, 1);
+    cursor: pointer;
+}
+.health-three:hover{
+    background-color: rgba(255, 204, 0, 1);
+    cursor: pointer;
+}
+.health-four:hover{
+    background-color: rgba(255, 204, 0, 1);
+    cursor: pointer;
+}
+.health{
+    background-color: rgba(255, 255, 255, 0.5);
     margin: .5em;
     padding: 1em;
     width: 4.7em;
     height: 5em;
     display: flex;
+    border: solid 1px white;
 }
 .health img{
     width: 1.5em;
@@ -88,16 +98,56 @@ body{
     padding: 1em;
     width: 50%;
     margin: auto;
-    background-color: rgba(225,225,225,0.2);
+    background-color: rgba(225,225,225,0.5);
     border-radius: 15px;
-    box-shadow:1px 1px 10px #fff, 1px 1px 10px #ccc;
+    /* box-shadow:1px 1px 10px #fff, 1px 1px 10px #ccc; */
     margin-top: 4em;
 }
 header img{
     width: 5em;
 }
 header{
-    color: rgba(255, 204, 0, 1);
+    /* color: rgba(255, 204, 0, 1); */
     display: flex;
     padding: 1em;
+}
+.header-one{
+    background-color: rgba(225,225,225,0.5);
+    width: 75%;
+    height: 2em;
+    border-radius: 0 20px 20px 0;
+    margin-top: 1.7em;
+    margin-left: 1.7em;
+    
+}
+.footer{
+    display: flex;
+}
+.footer-one{
+    background-color: rgba(225,225,225,0.5);
+    width: 10%;
+    height: 2em;
+    border-radius: 20px 0 0 20px ;
+    margin-right: 1em;
+}
+.footer-two{
+    background-color: rgba(225,225,225,0.5);
+    width: 85%;
+    height: 2em;
+    border-radius: 0 20px 20px 0;
+    animation-name: footerLength;
+    animation-duration: 2s;
+}
+@keyframes levels{
+    0% {
+        background-color: rgba(255, 56, 0, .25);
+    }
+}
+@keyframes footerLength{
+    0%{
+        width: 30%;
+    }
+    25%{
+        width: 60%;
+    }
 }
