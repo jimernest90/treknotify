@@ -69,12 +69,15 @@
                         <div class='health-boxes'>
                             <div class='health'><img src='./img/wrench.svg' alt='wrench' /><img src='./img/heart.svg'
                                     alt='heart' /></div>
-                            <div class='health health-two'>Register for notifications</div>
+                            <div class='health health-two'></div>
                             <div class='health health-three' onclick="notifyMe()">click for threat notification</div>
                             <div class='rounded-box'></div>
                             <script>
                                 const notifyMe = () => {
-
+                                    UA.then(sdk => {
+                                        sdk.register()
+                                        .then(console.log('you are registered'))
+                                    })
                                 }
                             </script>
                         </div>
@@ -83,6 +86,17 @@
             </div>
         </div>
     </div>
+    <script>
+        UA.then(sdk => {
+            sdk.plugins.load('html-prompt', 'https://aswpsdkus.com/notify/v1/ua-html-prompt.min.js', { disappearDelay: 1500, position: 'top-right', i18n:{
+                en: {
+                    title: 'get latest updates on Federation threats',
+                    message: 'subscribe'
+                }
+            }})
+                .then(plugin => plugin.prompt())
+        })
+    </script>
 </body>
 <script src="script.js"></script>
 
