@@ -24,7 +24,7 @@ body{
     position: relative;
 }
 .top-screen{
-    margin-left: 17.25em;
+    margin-left: 25em;
     display: flex;
     flex-wrap: wrap;
 }
@@ -98,6 +98,7 @@ body{
     border-radius: 15px;
     /* box-shadow:1px 1px 10px #fff, 1px 1px 10px #ccc; */
     margin-top: 4em;
+    
 }
 header img{
     width: 5em;
