@@ -10,7 +10,7 @@
     <title>Trek Notify</title>
 
     <script type="text/javascript">
-        // 86acbd31cd7c09cf30acb66d2fbedc91daa48b86:1618713607.4677484
+        // 86acbd31cd7c09cf30acb66d2fbedc91daa48b86:1618717697.2111537
         !function(n,r,e,t,c){var i,o="Promise"in n,u={then:function(){return u},catch:function(n){
         return n(new Error("Airship SDK Error: Unsupported browser")),u}},s=o?new Promise((function(n,r){i=function(e,t){e?r(e):n(t)}})):u
         ;s._async_setup=function(n){if(o)try{i(null,n(c))}catch(n){i(n)}},n[t]=s;var a=r.createElement("script");a.src=e,a.async=!0,a.id="_uasdk",
@@ -18,26 +18,11 @@
           'UA', {
             vapidPublicKey: 'BIrIv6yIqEolM5XKDhOFVXqdcw4BGmENuGXJ5LGTVc8k8sPmivYg7l_r5HTejLpRDiuYBp0dzk7uwLL7Kaw4wJk=',
             appKey: 'zNNG1hT7SsyA9Og15sA8kA',
-            token: 'MTp6Tk5HMWhUN1NzeUE5T2cxNXNBOGtBOlVCUzROMFZiaFVPOGdlODJtNHVGZHI2TEFNc3Y1X05hVTNJT3FUWVdrMHc',
-            workerUrl: '/service-worker.js'
+            token: 'MTp6Tk5HMWhUN1NzeUE5T2cxNXNBOGtBOlVCUzROMFZiaFVPOGdlODJtNHVGZHI2TEFNc3Y1X05hVTNJT3FUWVdrMHc'
           });
         
         </script>
-        <script>
-            if ('serviceWorker' in navigator) {
-                // Register a service worker hosted at the root of the
-                // site using the default scope.
-                navigator.serviceWorker.register('push-worker.js').then(function(registration) {
-                  console.log('Service worker registration succeeded:', registration);
-                }, /*catch*/ function(error) {
-                  console.log('Service worker registration failed:', error);
-                });
-              } else {
-                console.log('Service workers are not supported.');
-              }
-        </script>
 </head>
-
 <body>
     <div class='full-screen'>
         <header>
@@ -60,8 +45,9 @@
             </div>
             <div class='top-screen'>
 
-                <div class='left-box'></div>
+                
                 <div class='message-box-container'>
+                    <div class='left-box'></div>
                     <div class='message-box'></div>
                     <div class='rounded-box'></div>
                 </div>
@@ -83,9 +69,8 @@
         <script>
             function notifyMe() {
                 UA.then(sdk => {
-  sdk.register()
-  })
-
+                        sdk.register().then(console.log('you are registered'))
+                })
             }
         </script>
         
@@ -93,16 +78,7 @@
     <script>
         UA.then(sdk => {
             sdk.plugins.load('html-prompt', 'https://aswpsdkus.com/notify/v1/ua-html-prompt.min.js', {
-                appearDelay: 5000, disappearDelay: 17000,
-                i18n: {
-                    en: {
-                        title: 'Opt in to threat Notifications',
-                        message: 'Subscribe to federation threat notifications by clicking yes in the prompt.',
-                        accept: 'yes, subscribe me',
-                        deny: 'no',
-                        logo: 'https://i.imgur.com/jzWZhzc.png'
-                    }
-                }
+                appearDelay: 5000, disappearDelay: 17000
             })
                 .then(plugin => plugin.prompt())
         })

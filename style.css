@@ -69,8 +69,7 @@ body{
     transform: translateX(26px);
   }
 .transparent{
-    
-    border-radius: 10px;
+    background: url('./img/diagram.png');
     padding: 2em;
 }
 .full-screen{
@@ -230,7 +229,7 @@ header{
        
    }
    .header-one{
-       width: 10%;
+       display: none;
    }
    .message-box-container{
        padding: 0;
