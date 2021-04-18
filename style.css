@@ -1,21 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Antonio:wght@100&display=swap');
 body{
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: snow;
     background-size: cover;
     background-repeat: no-repeat;
     font-family: 'Antonio', sans-serif;
+}
+header{
+    position: sticky;
+    top: 0;
+    background-color: snow;
+
 }
 .nav{
     width: 100vw;
     display: flex;
 }
-.dark-mode-boxes{
-    background-color: rgb(37, 20, 109);
-}
 .dark-mode-background{
-    background: url('./img/background.jpg')
+    background: url('./img/background.jpg');
 }
-/* The switch - the box around the slider */
+.dark-mode-features{
+    background-color: rgba(225,225,225,0.5);
+    border-radius: 15px;
+}
+.dark-health{
+    background: rgba(255, 204, 0, .5);
+}
+.dark-health-one{
+    background-color: rgba(225,225,225,0.5);
+}
 .switch {
     position: relative;
     display: inline-block;
@@ -23,14 +35,12 @@ body{
     height: 34px;
   }
   
-  /* Hide default HTML checkbox */
   .switch input {
     opacity: 0;
     width: 0;
     height: 0;
   }
   
-  /* The slider */
   .slider {
     position: absolute;
     cursor: pointer;
@@ -69,12 +79,11 @@ body{
     transform: translateX(26px);
   }
 .transparent{
-    background: url('./img/diagram.png');
+    background-size: cover;
+    
     padding: 2em;
 }
 .full-screen{
-    /* background-color: rgba(0, 0, 0, 0.25); */
-    background-color: snow;
     background-size: cover;
     background-repeat: no-repeat;
     height: 100%;
@@ -86,6 +95,65 @@ body{
     display: flex;
     flex-wrap: wrap;
     width: 35em;
+
+}
+.features{
+    /* background-color: rgba(0,0,0,0.25); */
+    margin-top: 1em;
+    font-size: 1.5rem;
+}
+.features h1{
+    text-align: center;
+    color: rgba(255, 204, 0, 1);
+}
+
+.fuel-gauge{
+    display: flex;
+    justify-content: space-evenly;
+    right: 0;
+    padding: 1em;
+}
+.fuel-gauge img{
+    width: 3em;
+    height: 3em;
+
+}
+.space-view{
+    display: flex;
+    justify-content: space-evenly;
+    left: 0;
+}
+.space-view img{
+    width: 5em;
+    height: 5em;
+}
+.ship-diagram{
+    display: flex;
+    justify-content: space-evenly;
+    margin: auto;
+}
+.ship-diagram img{
+    width: 7em;
+    height:7em;
+}
+.notifier{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.notifier p{
+    animation-name: textBlink;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    font-size: 2em;
+}
+.notifier .images img{
+    width: 10em;
+    height: 11em;
+    margin: 1em;
+    animation-name: borderBlink;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
 }
 .left-box{
     background-color: rgba(255, 204, 0, 1);
@@ -103,7 +171,7 @@ body{
     width: 27.5em;
     height: 20em;
     padding: 1em;
-    margin: .5em;
+    margin: .2em;
     border: solid white 2px;
     background-repeat: no-repeat;
     display: flex;
@@ -112,41 +180,38 @@ body{
     display: flex;
     
 }
+.green{
+    background-color: rgba(106, 204, 150, 0.75);
+    background-image: none;
+}
 .health-one{
-    animation-name: levels;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.25),rgba(0,0,0,0.25), rgba(106, 204, 150, 0.75));
+    
 }
-.health-two:hover{
-    background-color: rgba(255, 204, 0, 1);
-    cursor: pointer;
+.health img:hover{
+    transform: scale(1.5);
 }
-.health-three:hover{
-    background-color: rgba(255, 204, 0, 1);
-    cursor: pointer;
-}
-.health-four:hover{
-    background-color: rgba(255, 204, 0, 1);
+.health:hover{
+    border: 2px solid rebeccapurple;
     cursor: pointer;
 }
 .health{
-    background-color: rgba(0, 0, 0, 0.25);
     margin: .5em;
     padding: 1em;
     width: 4.7em;
     height: 5em;
     display: flex;
     border: solid 1px white;
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.75);
 }
 .health img{
-    width: 1.5em;
+    width: 3em;
+    height: 3em;
+    margin: auto;
 }
 .rounded-box{
     background-color: rgba(255, 204, 0, 1);
     border-radius: 0 20px 20px 0;
-    margin-top: .5em;
-    margin-bottom: .5em;
-    margin-left: .5em;
     padding: 1em;
 }
 #about {
@@ -155,15 +220,14 @@ body{
     margin: auto;
     background-color: rgba(225,225,225,0.5);
     border-radius: 15px;
-    /* box-shadow:1px 1px 10px #fff, 1px 1px 10px #ccc; */
-    margin-top: 4em;
+    margin-top: 1em;
+    font-size: 1.5em;
     
 }
 header img{
     width: 5em;
 }
 header{
-    /* color: rgba(255, 204, 0, 1); */
     display: flex;
     padding: 1em;
 }
@@ -194,9 +258,19 @@ header{
     animation-name: footerLength;
     animation-duration: 2s;
 }
-@keyframes levels{
-    0% {
-        background-color: rgba(255, 56, 0, .25);
+
+@keyframes borderBlink{
+    0%{
+        border: solid 4px red;
+    }
+    25%{
+        border: none;
+    }
+}
+@keyframes textBlink{
+    0%{
+        color:  red;
+        transform: scale(1.5);
     }
 }
 @keyframes footerLength{
@@ -218,27 +292,24 @@ header{
     }
    .health-boxes{
        flex-wrap: wrap;
-       width: 15em;
-       margin: auto;
-       border-bottom: none;
+       width: 20em;
+       justify-content: center;
    }
    .health{
        width: 4em;
-       height: 4em;
-       
-       
+       height: 4em;  
    }
    .header-one{
        display: none;
    }
-   .message-box-container{
+   /* .message-box-container{
        padding: 0;
        display: flex;
-   }
+   } */
    .message-box{
        width: 15em;
        height: 15em;
-       margin: auto;
+       
        border: none;
    }
    .top-screen{
@@ -247,9 +318,13 @@ header{
        flex-direction: column;
    }
    .left-box{
+       margin: 0;
+       
+   }
+   .rounded-box.bottom{
        display: none;
    }
-   .rounded-box{
+   .left-box.bottom{
        display: none;
    }
    #about{
@@ -259,11 +334,14 @@ header{
        margin-bottom: 1em;
    }
    .nav{
-       /* background-color: rgba(255, 204, 0, 1); */
        width: 100vw;
    }
    .nav img{
        width: 2em;
        height: 2em;
    }
+   .top-screen{
+       width: auto;
+   }
+   
 }
