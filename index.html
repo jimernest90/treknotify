@@ -81,7 +81,15 @@
     <script>
         UA.then(sdk => {
             sdk.plugins.load('html-prompt', 'https://aswpsdkus.com/notify/v1/ua-html-prompt.min.js', {
-                appearDelay: 5000, disappearDelay: 17000
+                appearDelay: 5000, disappearDelay: 17000, il8n:{
+                    en:{
+                        title: 'Get notified of Federation Threats',
+                        message: 'do you want to receive federation threaths?',
+                        accept:'yes, today is a good day to die!',
+                        demy: 'no'
+
+                    }
+                }
             })
                 .then(plugin => plugin.prompt())
         })
