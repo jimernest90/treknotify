@@ -22,24 +22,6 @@
           });
         
     </script>
-    <script type="text/javascript">
-        !function(n,t,c,e,u){function r(n){try{f=n(u)}catch(n){return h=n,void i(p,n)}i(s,f)}function i(n,t){for(var c=0;c<n.length;c++)d(n[c],t);
-        }function o(n,t){return n&&(f?d(n,f):s.push(n)),t&&(h?d(t,h):p.push(t)),l}function a(n){return o(!1,n)}function d(t,c){
-        n.setTimeout(function(){t(c)},0)}var f,h,s=[],p=[],l={then:o,catch:a,_setup:r};n[e]=l;var v=t.createElement("script");
-        v.src=c,v.async=!0,v.id="_uasdk",v.rel=e,t.head.appendChild(v)}(window,document,'https://web-sdk.urbanairship.com/notify/v1/ua-sdk.min.js',
-          'UA', // This value can be changed to use a custom variable name.
-          {
-          appKey: 'YOUR-APP-KEY',
-          token: 'BEARERTOKEN-FROM-UA',
-        
-          // Safari Web Push only
-          websitePushId: 'WEBSITE-PUSH-ID-FROM-UA',
-          // Open Web Push Protocol only.
-          vapidPublicKey: 'WEB-PUSH-KEY-FROM-UA',
-          // Only needed when used on insecure hosts:
-          secureIframeUrl: 'https://your.secure.domain/path/to/web-push-secure-bridge.html'
-          })
-        </script>
 </head>
 <body>
     <div class='full-screen'>
@@ -99,15 +81,8 @@
     <script>
         UA.then(sdk => {
             sdk.plugins.load('html-prompt', 'https://aswpsdkus.com/notify/v1/ua-html-prompt.min.js', {
-                appearDelay: 5000, disappearDelay: 17000, il8n:{
-                    en:{
-                        title: 'Get notified of Federation Threats',
-                        message: 'do you want to receive federation threaths?',
-                        accept:'yes, today is a good day to die!',
-                        deny: 'no'
-
-                    }
-                }
+                appearDelay: 5000, 
+                disappearDelay: 17000
             })
                 .then(plugin => plugin.prompt())
         })
