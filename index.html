@@ -17,8 +17,8 @@
                     return n(new Error("Airship SDK Error: Unsupported browser")), u
                 }
             }, s = o ? new Promise((function (n, r) { i = function (e, t) { e ? r(e) : n(t) } })) : u
-            ; s._async_setup = function (n) { if (o) try { i(null, n(c)) } catch (n) { i(n) } }, n[t] = s; var a = r.createElement("script"); a.src = e, a.async = !0, a.id = "_uasdk",
-                a.rel = t, r.head.appendChild(a)
+                ; s._async_setup = function (n) { if (o) try { i(null, n(c)) } catch (n) { i(n) } }, n[t] = s; var a = r.createElement("script"); a.src = e, a.async = !0, a.id = "_uasdk",
+                    a.rel = t, r.head.appendChild(a)
         }(window, document, 'https://aswpsdkus.com/notify/v1/ua-sdk.min.js',
             'UA', {
             vapidPublicKey: 'BIrIv6yIqEolM5XKDhOFVXqdcw4BGmENuGXJ5LGTVc8k8sPmivYg7l_r5HTejLpRDiuYBp0dzk7uwLL7Kaw4wJk=',
@@ -92,6 +92,18 @@
                     sdk.register().then(console.log('you are registered'))
                 })
             }
+
+            sdk.addEventListener('channel', ev => {
+                console.log('ev.channel: ', ev.channel);
+                console.log('sdk.channel: ', sdk.channel);
+            }, { once: true });
+            sdk.addEventListener('tags', ev => {
+                console.log('ev.tags: ', ev.tags);
+                console.log('sdk.channel.tags.list: ', sdk.channel.tags.list);
+            });
+            sdk.addEventListener('push', ev => {
+                console.log('ev.push: ', ev.push);
+            });
         </script>
 
     </div>
@@ -104,17 +116,7 @@
                 .then(plugin => plugin.prompt())
         })
 
-        sdk.addEventListener('channel', ev => {
-            console.log('ev.channel: ', ev.channel);
-            console.log('sdk.channel: ', sdk.channel);
-        }, { once: true });
-        sdk.addEventListener('tags', ev => {
-            console.log('ev.tags: ', ev.tags);
-            console.log('sdk.channel.tags.list: ', sdk.channel.tags.list);
-        });
-        sdk.addEventListener('push', ev => {
-            console.log('ev.push: ', ev.push);
-        });
+
     </script>
 </body>
 <script src="script.js"></script>
