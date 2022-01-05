@@ -104,11 +104,17 @@
                 .then(plugin => plugin.prompt())
         })
 
-        UA.then(sdk => {
-            sdk.addEventListener('channel', ev => {
-                ev.channel === sdk.channel
-            }, { once: true })
-        })
+        sdk.addEventListener('channel', ev => {
+            console.log('ev.channel: ', ev.channel);
+            console.log('sdk.channel: ', sdk.channel);
+        }, { once: true });
+        sdk.addEventListener('tags', ev => {
+            console.log('ev.tags: ', ev.tags);
+            console.log('sdk.channel.tags.list: ', sdk.channel.tags.list);
+        });
+        sdk.addEventListener('push', ev => {
+            console.log('ev.push: ', ev.push);
+        });
     </script>
 </body>
 <script src="script.js"></script>
