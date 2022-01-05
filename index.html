@@ -11,18 +11,24 @@
 
     <script type="text/javascript">
         // 86acbd31cd7c09cf30acb66d2fbedc91daa48b86:1618717697.2111537
-        !function(n,r,e,t,c){var i,o="Promise"in n,u={then:function(){return u},catch:function(n){
-        return n(new Error("Airship SDK Error: Unsupported browser")),u}},s=o?new Promise((function(n,r){i=function(e,t){e?r(e):n(t)}})):u
-        ;s._async_setup=function(n){if(o)try{i(null,n(c))}catch(n){i(n)}},n[t]=s;var a=r.createElement("script");a.src=e,a.async=!0,a.id="_uasdk",
-        a.rel=t,r.head.appendChild(a)}(window,document,'https://aswpsdkus.com/notify/v1/ua-sdk.min.js',
-          'UA', {
+        !function (n, r, e, t, c) {
+            var i, o = "Promise" in n, u = {
+                then: function () { return u }, catch: function (n) {
+                    return n(new Error("Airship SDK Error: Unsupported browser")), u
+                }
+            }, s = o ? new Promise((function (n, r) { i = function (e, t) { e ? r(e) : n(t) } })) : u
+            ; s._async_setup = function (n) { if (o) try { i(null, n(c)) } catch (n) { i(n) } }, n[t] = s; var a = r.createElement("script"); a.src = e, a.async = !0, a.id = "_uasdk",
+                a.rel = t, r.head.appendChild(a)
+        }(window, document, 'https://aswpsdkus.com/notify/v1/ua-sdk.min.js',
+            'UA', {
             vapidPublicKey: 'BIrIv6yIqEolM5XKDhOFVXqdcw4BGmENuGXJ5LGTVc8k8sPmivYg7l_r5HTejLpRDiuYBp0dzk7uwLL7Kaw4wJk=',
             appKey: 'zNNG1hT7SsyA9Og15sA8kA',
             token: 'MTp6Tk5HMWhUN1NzeUE5T2cxNXNBOGtBOlVCUzROMFZiaFVPOGdlODJtNHVGZHI2TEFNc3Y1X05hVTNJT3FUWVdrMHc'
-          });
-        
+        });
+
     </script>
 </head>
+
 <body>
     <div class='full-screen'>
         <header>
@@ -38,16 +44,27 @@
         <div class='transparent'>
             <div id='about'>
                 <p>Let's face it. We are under attack all the time. Romulans, Cardassians, etc. With this state of the
-                    art <b>NOTIFIER</b>, we will be ahead of any unforseen threat. Wouldn't you like to be notified before a Q
+                    art <b>NOTIFIER</b>, we will be ahead of any unforseen threat. Wouldn't you like to be notified
+                    before a Q
                     comes in and zaps you into some sort Arthurian nightmare?
                 </p>
             </div>
-            <div class ='features'>
+            <div class='features'>
                 <h1>FEATURES</h1>
-                <div class='fuel-gauge'><img src='./img/crystals.png' alt='crystals' /><p>REMOTE DYLITHIAM GAUGE AND REFILL</p></div>
-                <div class= 'space-view'><p>SPACE VIEW</p><img src='./img/stars.png' alt='stars'></div>
-                <div class='ship-diagram'><img src='./img/diagram-two.jpeg'/><p>KEEP AN EYE ON IMPORTANT SYSTEMS WITH DETAILED SHIP DIAGRAM</p></div>
-                <div class='notifier'><p>THREAT!</p><div class='images'><img src='./img/borg.jpeg' alt='borg'></img><img src='./img/cardassian.jpeg' alt='cardassians'></img></div></div>
+                <div class='fuel-gauge'><img src='./img/crystals.png' alt='crystals' />
+                    <p>REMOTE DYLITHIAM GAUGE AND REFILL</p>
+                </div>
+                <div class='space-view'>
+                    <p>SPACE VIEW</p><img src='./img/stars.png' alt='stars'>
+                </div>
+                <div class='ship-diagram'><img src='./img/diagram-two.jpeg' />
+                    <p>KEEP AN EYE ON IMPORTANT SYSTEMS WITH DETAILED SHIP DIAGRAM</p>
+                </div>
+                <div class='notifier'>
+                    <p>THREAT!</p>
+                    <div class='images'><img src='./img/borg.jpeg' alt='borg'></img><img src='./img/cardassian.jpeg'
+                            alt='cardassians'></img></div>
+                </div>
             </div>
             <div class='top-screen'>
                 <div class='message-box-container'>
@@ -72,19 +89,25 @@
         <script>
             function notifyMe() {
                 UA.then(sdk => {
-                        sdk.register().then(console.log('you are registered'))
+                    sdk.register().then(console.log('you are registered'))
                 })
             }
         </script>
-        
+
     </div>
     <script>
         UA.then(sdk => {
             sdk.plugins.load('html-prompt', 'https://aswpsdkus.com/notify/v1/ua-html-prompt.min.js', {
-                appearDelay: 5000, 
+                appearDelay: 5000,
                 disappearDelay: 17000
             })
                 .then(plugin => plugin.prompt())
+        })
+
+        UA.then(sdk => {
+            sdk.addEventListener('channel', ev => {
+                ev.channel === sdk.channel
+            }, { once: true })
         })
     </script>
 </body>
