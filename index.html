@@ -91,19 +91,20 @@
                 UA.then(sdk => {
                     sdk.register().then(console.log('you are registered'))
                 })
+                sdk.addEventListener('channel', ev => {
+                    console.log('ev.channel: ', ev.channel);
+                    console.log('sdk.channel: ', sdk.channel);
+                }, { once: true });
+                sdk.addEventListener('tags', ev => {
+                    console.log('ev.tags: ', ev.tags);
+                    console.log('sdk.channel.tags.list: ', sdk.channel.tags.list);
+                });
+                sdk.addEventListener('push', ev => {
+                    console.log('ev.push: ', ev.push);
+                });
             }
 
-            sdk.addEventListener('channel', ev => {
-                console.log('ev.channel: ', ev.channel);
-                console.log('sdk.channel: ', sdk.channel);
-            }, { once: true });
-            sdk.addEventListener('tags', ev => {
-                console.log('ev.tags: ', ev.tags);
-                console.log('sdk.channel.tags.list: ', sdk.channel.tags.list);
-            });
-            sdk.addEventListener('push', ev => {
-                console.log('ev.push: ', ev.push);
-            });
+
         </script>
 
     </div>
