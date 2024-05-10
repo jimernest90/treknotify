@@ -1,7 +1,8 @@
-// 86acbd31cd7c09cf30acb66d2fbedc91daa48b86:1641419664.3699162
+// 86acbd31cd7c09cf30acb66d2fbedc91daa48b86:1715374001.8423417
 importScripts('https://aswpsdkus.com/notify/v1/ua-sdk.min.js')
 uaSetup.worker(self, {
-  defaultIcon: 'https://imgur.com/r/space/v4pVYQk',
+  
+  defaultIcon: 'https://imgur.com/ZXEvmUb',
   defaultTitle: 'Trek Notify',
   defaultActionURL: 'https://treknotify.com',
   appKey: 'DJ1kcFrCQmS1Fa107GK87w',
